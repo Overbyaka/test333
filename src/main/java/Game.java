@@ -27,7 +27,7 @@ public class Game {
                 a = in.nextInt();
                 b = in.nextInt();
             } while (checkIsCorrectIn(array, a, b));
-            
+
             if(isX){
                 array[a][b] = 'x';
             }

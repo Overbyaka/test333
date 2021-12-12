@@ -27,4 +27,28 @@ public class GameTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void checkIsCorrectIn() {
+        char [][]array = {{'o', '.', '.'}, {'.', 'x', '.'}, {'.', '.', '.'}};
+
+        int a1 = 0, b1 = 0;
+        int a2 = 1, b2 = 1;
+        int a3 = 2, b3 = 2;
+        int a4 = 4, b4 = 0;
+
+        List<Boolean> expected = new ArrayList<>();
+        expected.add(false);
+        expected.add(false);
+        expected.add(true);
+        expected.add(false);
+
+        List<Boolean> actual = new ArrayList<>();
+        actual.add(Game.checkIsCorrectIn(array, a1, b1));
+        actual.add(Game.checkIsCorrectIn(array, a2, b2));
+        actual.add(Game.checkIsCorrectIn(array, a3, b3));
+        actual.add(Game.checkIsCorrectIn(array, a4, b4));
+
+        Assert.assertEquals(expected, actual);
+    }
 }
