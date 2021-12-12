@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args){
         char array[][] = new char[3][3];
-        boolean isX = true;
+        boolean isX = false;
+        int a, b;
         Scanner in = new Scanner(System.in);
 
         for(int i = 0; i < 3; i++){
@@ -13,6 +14,7 @@ public class Game {
         }
 
         while(checkIsWin(array)) {
+            isX = !isX;
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     System.out.print(array[i][j]);
@@ -20,8 +22,21 @@ public class Game {
                 System.out.println();
             }
 
-
+            do {
+                System.out.println("Введите координаты: ");
+                a = in.nextInt();
+                b = in.nextInt();
+            } while (checkIsCorrectIn(array, a, b));
+            
+            if(isX){
+                array[a][b] = 'x';
+            }
+            else{
+                array[a][b] = 'o';
+            }
         }
+
+
     }
 
     public static boolean checkIsWin(char array[][]){
@@ -40,5 +55,13 @@ public class Game {
             return true;
         }
         return false;
+    }
+
+    public static boolean checkIsCorrectIn(char array[][], int a, int b){
+        if(a < 0 || a > 2 || b < 0 || b > 2)
+            return false;
+        if(array[a][b] != '.')
+            return false;
+        return true;
     }
 }
