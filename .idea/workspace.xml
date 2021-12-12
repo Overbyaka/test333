@@ -53,7 +53,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GameTest.checkIsCorrectIn">
+  <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game" />
       <module name="test333" />
@@ -83,9 +83,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Game" />
         <item itemvalue="JUnit.GameTest.checkIsCorrectIn" />
         <item itemvalue="JUnit.GameTest.checkIsWin" />
-        <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
   </component>

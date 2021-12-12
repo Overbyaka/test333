@@ -13,7 +13,9 @@ public class Game {
             }
         }
 
-        while(checkIsWin(array)) {
+        for(int k = 0; k < 9; k++) {
+            if(checkIsWin(array))
+                break;
             isX = !isX;
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
@@ -26,7 +28,7 @@ public class Game {
                 System.out.println("Введите координаты: ");
                 a = in.nextInt();
                 b = in.nextInt();
-            } while (checkIsCorrectIn(array, a, b));
+            } while (!checkIsCorrectIn(array, a, b));
 
             if(isX){
                 array[a][b] = 'x';
@@ -35,7 +37,16 @@ public class Game {
                 array[a][b] = 'o';
             }
         }
-
+        if(checkIsWin(array)) {
+            if (isX) {
+                System.out.println("Победа X!");
+            } else {
+                System.out.println("Победа O!");
+            }
+        }
+        else{
+            System.out.println("Ничья!");
+        }
 
     }
 
